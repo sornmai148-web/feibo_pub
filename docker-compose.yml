@@ -1,0 +1,12 @@
+services:
+  hw_feibo:
+    image: hw_feibo:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - NEXT_PUBLIC_URL=http://localhost:3000
+      - NEXT_PUBLIC_API_URL=http://a6ac7438791f7462895472cade21e351-8e8ffc566269d199.elb.ap-southeast-1.amazonaws.com
+      - NEXT_API_URL=http://a6ac7438791f7462895472cade21e351-8e8ffc566269d199.elb.ap-southeast-1.amazonaws.com:8080
